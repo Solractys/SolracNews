@@ -21,9 +21,9 @@ const apiKey = import.meta.env.VITE_API_KEY;
 export default function App() {
   const [news, setNews] = useState<News[]>([]);
   async function getNews() {
-    await api.get(`top-headlines?category=technology&country=br&pagesize=30&apiKey=${apiKey}`, {
-      withCredentials: true
-    })
+    const url = `https://newsapi.org/v2/top-headlines?category=technology&country=br&pagesize=30&apiKey=e96df1f3a9374775bf85c39ec8bf5982`;
+
+    await api.get(url)
     .then((response) => {
         setNews(response.data.articles)
     })
