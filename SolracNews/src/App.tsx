@@ -17,7 +17,7 @@ interface News {
   publishedAt: string
   content: string
 }
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = process.env.VERCEL_API_KEY;
 export default function App() {
   const [news, setNews] = useState<News[]>([]);
   async function getNews() {
